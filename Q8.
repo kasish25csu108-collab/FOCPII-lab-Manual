@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+
+    cout << "Enter the number of events: ";
+    cin >> N;
+
+    for (int i = 1; i <= N; i++) {
+        bool tagged = false;
+
+        if (i % 3 == 0) {
+            cout << "Buzz";
+            tagged = true;
+        }
+
+        if (i % 5 == 0) {
+            if (tagged) cout << " "; // Space if both tags apply
+            cout << "Fuzz";
+            tagged = true;
+        }
+
+        if (!tagged) {
+            cout << i; // Print the ID itself if no tags
+        }
+
+        cout << endl;
+    }
+
+    return 0;
+}
