@@ -1,0 +1,42 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+
+// Function to check if a number is prime
+bool isPrime(int n) {
+    if (n <= 1) return false;
+    if (n == 2) return true;
+    if (n % 2 == 0) return false;
+    int sqrtN = static_cast<int>(sqrt(n));
+    for (int i = 3; i <= sqrtN; i += 2) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+// Function to generate primes in a given range [start, end]
+std::vector<int> generatePrimes(int start, int end) {
+    std::vector<int> primes;
+    for (int i = start; i <= end; i++) {
+        if (isPrime(i)) {
+            primes.push_back(i);
+        }
+    }
+    return primes;
+}
+
+int main() {
+    int start, end;
+    std::cout << "Enter the range (start and end): ";
+    std::cin >> start >> end;
+
+    std::vector<int> primes = generatePrimes(start, end);
+
+    std::cout << "Prime numbers in the range [" << start << ", " << end << "] are:\n";
+    for (int prime : primes) {
+        std::cout << prime << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
