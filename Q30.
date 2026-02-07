@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int NUM_EMPLOYEES = 10;
+    double salaries[NUM_EMPLOYEES];
+    double totalSalary = 0.0;
+    double averageSalary;
+
+    // Input salaries
+    cout << "Enter salaries of " << NUM_EMPLOYEES << " employees:\n";
+    for(int i = 0; i < NUM_EMPLOYEES; i++) {
+        cout << "Salary of employee " << (i + 1) << ": ";
+        cin >> salaries[i];
+        totalSalary += salaries[i];  // Add to total
+    }
+
+    // Compute average
+    averageSalary = totalSalary / NUM_EMPLOYEES;
+
+    // Display results
+    cout << "\nTotal salary of all employees: " << totalSalary << endl;
+    cout << "Average salary: " << averageSalary << endl;
+
+    return 0;
+}
