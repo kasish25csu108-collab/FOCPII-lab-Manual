@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int SIZE = 10;
+    double prices[SIZE]; // Array to store item prices
+    double maxPrice;
+
+    // Input prices from user
+    cout << "Enter prices of 10 items:\n";
+    for (int i = 0; i < SIZE; i++) {
+        cout << "Price of item " << i + 1 << ": ";
+        cin >> prices[i];
+    }
+
+    // Initialize maxPrice with the first element
+    maxPrice = prices[0];
+
+    // Find the maximum price
+    for (int i = 1; i < SIZE; i++) {
+        if (prices[i] > maxPrice) {
+            maxPrice = prices[i];
+        }
+    }
+
+    // Display the maximum price
+    cout << "The maximum price is: " << maxPrice << endl;
+
+    return 0;
+}
