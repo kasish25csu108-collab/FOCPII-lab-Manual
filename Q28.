@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5];          // Array to store 5 elements
+    int sumEven = 0;     // Sum of even numbers
+    int sumOdd = 0;      // Sum of odd numbers
+
+    // Input 5 elements
+    cout << "Enter 5 integers: ";
+    for (int i = 0; i < 5; i++) {
+        cin >> arr[i];
+    }
+
+    // Process array elements
+    for (int i = 0; i < 5; i++) {
+        if (arr[i] % 2 == 0) {
+            sumEven += arr[i];   // Add to even sum
+        } else {
+            sumOdd += arr[i];    // Add to odd sum
+        }
+    }
+
+    // Display results
+    cout << "Sum of even numbers: " << sumEven << endl;
+    cout << "Sum of odd numbers: " << sumOdd << endl;
+
+    return 0;
+}
